@@ -9,7 +9,6 @@ import {
   Keyboard,
   ScrollView,
 } from "react-native";
-import CupertinoButtonInfo from "../../assets/components/CupertinoButtonInfo.js";
 import Icon from "react-native-vector-icons/FontAwesome";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import AppwriteClient from "../appwriteclient";
@@ -35,7 +34,7 @@ export default class LoginPage extends Component {
         const user = await AppwriteClient.account.get();
         this.setState({ loggedInUser: user });
       } catch (error) {
-        console.error("Failed to fetch user", error);
+       // console.error("Failed to fetch user", error);
       }
     }
   }
