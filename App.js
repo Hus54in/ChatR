@@ -1,35 +1,52 @@
-import { StyleSheet, SafeAreaView, Text, View } from "react-native";
-import ChatsScreen from "./app/chats_screen";
+import React, { useState, useEffect } from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import LoginPage from "./app/login/login";
+import HomePage from "./app/home/homepage";
+import AppwriteClient from "./app/appwriteclient";
 
-const DATA = [
-  { id: "1", title: "Item 1" },
-  { id: "2", title: "Item 2" },
-  { id: "3", title: "Item 3" },
-  // Add more items as needed
-];
+const Stack = createStackNavigator();
 
 export default function App() {
+  const [loggedInUser, setLoggedInUser] = useState(null);
+
+  useEffect(() => {
+    const getUser = async () => {
+      try {
+        const user = await AppwriteClient.account.get();
+        setLoggedInUser(user);
+      } catch (error) {
+        console.error("Failed to fetch user", error);
+      }
+    };
+
+    getUser();
+  }, []);
+
   return (
-    <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>Chats</Text>
-      <ChatsScreen style={styles.item_view} data={DATA} />
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        {loggedInUser ? (
+          <Stack.Screen name="Home" hea>
+            {(props) => (
+              <HomePage
+                {...props}
+                user={loggedInUser}
+                onLogout={() => setLoggedInUser(null)}
+              />
+            )}
+          </Stack.Screen>
+        ) : (
+          <Stack.Screen name="Login">
+            {(props) => (
+              <LoginPage
+                {...props}
+                onLoginSuccess={(user) => setLoggedInUser(user)}
+              />
+            )}
+          </Stack.Screen>
+        )}
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1, 
-    backgroundColor: "black",
-  },
-  title: {
-    padding: 20,
-    fontSize: 30,
-    fontWeight: "bold",
-    textAlign: "start",
-    color: "white",
-  }, 
-  item_view: {
-    padding: 10
-  }
-});

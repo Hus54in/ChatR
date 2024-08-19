@@ -1,18 +1,16 @@
 import React from "react";
 import { StyleSheet, Text, View, FlatList } from "react-native";
 
-
-
 export default function ChatsScreen(data, styles) {
-  return  (
-    <FlatList styles={styles}
+  return (
+    <FlatList
+      styles={styles}
       data={data.data}
       renderItem={renderItem}
       keyExtractor={(item) => item.id}
     />
   );
 }
-
 
 const renderItem = ({ item }) => (
   <View style={styles.item}>
@@ -27,6 +25,6 @@ const styles = StyleSheet.create({
     borderBottomColor: "white",
   },
   text: {
-    color: "white"
-  }
+    color: "white",
+  },
 });
