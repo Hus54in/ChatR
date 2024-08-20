@@ -49,6 +49,9 @@ const styles = StyleSheet.create({
     marginTop: 70,
     flexDirection: "row",
     justifyContent: "space-between",
+    borderBottomColor: "grey",
+    paddingBottom: 10,
+    borderBottomWidth: 0.5,
   },
   profileImgContainer: {
     marginLeft: 8,

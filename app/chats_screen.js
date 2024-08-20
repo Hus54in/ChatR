@@ -34,9 +34,7 @@ const renderItem = ({ item }) => (
 
 const styles = StyleSheet.create({
   item: {
-    padding: 20,
-    borderBottomWidth: 1,
-    borderBottomColor: "white",
+    padding: 20
   },
   text: {
     color: "white",

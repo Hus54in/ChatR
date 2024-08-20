@@ -6,7 +6,7 @@ import HomePage from "./app/home/homepage";
 import AppwriteClient from "./app/appwriteclient";
 import ProfileScreen from "./app/home/profile";
 import SearchUserScreen from "./app/search_user/search_user";
-
+import Register from "./app/login/register";
 const Stack = createStackNavigator();
 
 export default function App() {
@@ -27,7 +27,7 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="Home">
+      <Stack.Navigator screenOptions={{ headerShown: false }} >
         {loggedInUser ? (
           <Stack.Screen name="Home" >
             {(props) => (
@@ -57,6 +57,14 @@ export default function App() {
             )}
           </Stack.Screen>
       <Stack.Screen name="Search" component={SearchUserScreen} />
+      <Stack.Screen name="Register">
+            {(props) => (
+              <Register
+                {...props}
+                
+              />
+            )}
+          </Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
   );

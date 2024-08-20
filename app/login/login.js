@@ -39,6 +39,10 @@ export default class LoginPage extends Component {
     }
   }
 
+  navigateToRegister = () => {
+    this.props.navigation.navigate("Register");
+  };
+
   login = async () => {
     console.log("Logging in");
     const { email, password } = this.state;
@@ -105,7 +109,7 @@ export default class LoginPage extends Component {
               </TouchableOpacity>
               <TouchableOpacity
                 style={[styles.button, styles.register_button]}
-                onPress={this.login}
+                onPress={this.navigateToRegister}
               >
                 <Text style={styles.buttontext}>Register</Text>
               </TouchableOpacity>
