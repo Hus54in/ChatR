@@ -1,0 +1,13 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/Molengo-Regular.ttf",
+      "sha1": "56640136a51e66c36183ea040eee44e0b43cbf49"
+    },
+    {
+      "path": "assets/fonts/georgia.ttf",
+      "sha1": "5818c435d0ff1333d98891690a83f50e56bc5a3b"
+    }
+  ]
+}

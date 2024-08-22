@@ -6,7 +6,7 @@ class AppwriteClient {
     .setProject("66c27c9900115c049a13")
     .setPlatform("com.endem.ChatR");
   static databaseid = '66c302157b5e7708824c';
-  static collectionid = '66c306b2000e1ccc322c';
+  static collection_user = '66c306b2000e1ccc322c';
   static account = new Account(AppwriteClient.client);
 
 

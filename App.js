@@ -7,6 +7,7 @@ import AppwriteClient from "./app/appwriteclient";
 import ProfileScreen from "./app/home/profile";
 import SearchUserScreen from "./app/search_user/search_user";
 import Register from "./app/login/register";
+import Chat from "./app/chat/chat";
 const Stack = createStackNavigator();
 
 export default function App() {
@@ -25,19 +26,21 @@ export default function App() {
     getUser();
   }, []);
 
+
+
+
+
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }} >
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
         {loggedInUser ? (
-          <Stack.Screen name="Home" >
+          <Stack.Screen name="Home">
             {(props) => (
-              <HomePage {...props} 
-              navigation={Stack}/>
-              
+              <Chat {...props} navigation={Stack} />
             )}
           </Stack.Screen>
         ) : (
-          <Stack.Screen name="l">
+          <Stack.Screen name="Login">
             {(props) => (
               <LoginPage
                 {...props}
@@ -45,26 +48,22 @@ export default function App() {
               />
             )}
           </Stack.Screen>
-
         )}
-      <Stack.Screen name="Profile" component={ProfileScreen} />
-      <Stack.Screen name="Login_page">
-            {(props) => (
-              <LoginPage
-                {...props}
-                onLoginSuccess={(user) => setLoggedInUser(user)}
-              />
-            )}
-          </Stack.Screen>
-      <Stack.Screen name="Search" component={SearchUserScreen} />
-      <Stack.Screen name="Register">
-            {(props) => (
-              <Register
-                {...props}
-                
-              />
-            )}
-          </Stack.Screen>
+        <Stack.Screen name="Profile" component={ProfileScreen} />
+        <Stack.Screen name="Login_page">
+          {(props) => (
+            <LoginPage
+              {...props}
+              onLoginSuccess={(user) => setLoggedInUser(user)}
+            />
+          )}
+        </Stack.Screen>
+        <Stack.Screen name="Search" component={SearchUserScreen} />
+        <Stack.Screen name="Register">
+          {(props) => (
+            <Register {...props} />
+          )}
+        </Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
   );

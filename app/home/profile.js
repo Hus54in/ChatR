@@ -13,6 +13,7 @@ export default function ProfileScreen( ) {
           <Text style={[styles.back, styles.top]}>&lt;</Text>  
          </TouchableOpacity >
         <Text style={ styles.chats_heading}>Profile Screen</Text>
+        <Text style={{color:"white"}}>Welcome {AppwriteClient.account.name}</Text>
         <TouchableOpacity
   style={styles.button}
   onPress={async () => {

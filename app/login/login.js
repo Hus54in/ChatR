@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Molengo_400Regular } from "@expo-google-fonts/molengo";
+import { NotoSansGeorgian_400Regular } from "@expo-google-fonts/noto-sans-georgian";
 import {
   StyleSheet,
   View,
@@ -13,7 +15,12 @@ import Icon from "react-native-vector-icons/FontAwesome";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import AppwriteClient from "../appwriteclient";
 
+
+
 export default class LoginPage extends Component {
+  
+  
+
   constructor(props) {
     super(props);
     this.state = {
@@ -60,6 +67,8 @@ export default class LoginPage extends Component {
       console.error("Failed to login", error);
     }
   };
+
+
 
   render() {
     return (
@@ -158,7 +167,7 @@ const styles = StyleSheet.create({
     top: 0,
     left: 6,
     position: "absolute",
-    fontFamily: "molengo-regular",
+    fontFamily: "Molengo-Regular",
     color: "#121212",
     fontSize: 28,
   },
@@ -166,7 +175,7 @@ const styles = StyleSheet.create({
     top: 21,
     left: 0,
     position: "absolute",
-    fontFamily: "roboto-regular",
+    fontFamily: "Roboto",
     color: "#121212",
     fontSize: 79,
   },
@@ -180,7 +189,7 @@ const styles = StyleSheet.create({
     top: 16,
     left: 11,
     position: "absolute",
-    fontFamily: "georgia-regular",
+    fontFamily: "Georgia-Regular",
     color: "#121212",
   },
   rect: {
