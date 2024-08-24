@@ -8,6 +8,7 @@ import ProfileScreen from "./app/home/profile";
 import SearchUserScreen from "./app/search_user/search_user";
 import Register from "./app/login/register";
 import Chat from "./app/chat/chat";
+import ChatManagerPool from "./app/chat/chatsmanagerpool";
 const Stack = createStackNavigator();
 
 export default function App() {
@@ -17,6 +18,8 @@ export default function App() {
     const getUser = async () => {
       try {
         const user = await AppwriteClient.account.get();
+          ChatManagerPool.chatManagers = new Map(); // Initialize the pool
+          ChatManagerPool.startPool(); // Start the pool
         setLoggedInUser(user);
       } catch (error) {
         console.error("Failed to fetch user", error);
