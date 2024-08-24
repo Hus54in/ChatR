@@ -42,6 +42,16 @@
 		<key>NSAllowsLocalNetworking</key>
 		<true/>
 	</dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Molengo-Regular.ttf</string>
+		<string>georgia.ttf</string>
+	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>remote-notification</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>SplashScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -68,10 +78,5 @@
 	<string>Light</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-	<key>UIAppFonts</key>
-	<array>
-		<string>Molengo-Regular.ttf</string>
-		<string>georgia.ttf</string>
-	</array>
 </dict>
 </plist>

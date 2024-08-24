@@ -3,9 +3,11 @@ PODS:
   - DoubleConversion (1.1.6)
   - EXConstants (16.0.2):
     - ExpoModulesCore
-  - Expo (51.0.28):
+  - Expo (51.0.30):
     - ExpoModulesCore
   - ExpoAsset (10.0.10):
+    - ExpoModulesCore
+  - ExpoDevice (5.9.3):
     - ExpoModulesCore
   - ExpoFileSystem (17.0.1):
     - ExpoModulesCore
@@ -13,7 +15,7 @@ PODS:
     - ExpoModulesCore
   - ExpoKeepAwake (13.0.2):
     - ExpoModulesCore
-  - ExpoModulesCore (1.12.21):
+  - ExpoModulesCore (1.12.22):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -970,6 +972,31 @@ PODS:
   - React-Mapbuffer (0.74.5):
     - glog
     - React-debug
+  - react-native-blur (4.4.0):
+    - DoubleConversion
+    - glog
+    - hermes-engine
+    - RCT-Folly (= 2024.01.01.00)
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Codegen
+    - React-Core
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-ImageManager
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-rendererdebug
+    - React-utils
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - Yoga
+  - react-native-notifications (5.1.0):
+    - React-Core
+  - react-native-safe-area-context (4.10.5):
+    - React-Core
   - React-nativeconfig (0.74.5)
   - React-NativeModulesApple (0.74.5):
     - glog
@@ -1199,6 +1226,55 @@ PODS:
     - React-logger (= 0.74.5)
     - React-perflogger (= 0.74.5)
     - React-utils (= 0.74.5)
+  - RNBackgroundFetch (4.2.5):
+    - React-Core
+  - RNCAsyncStorage (1.23.1):
+    - React-Core
+  - RNCPushNotificationIOS (1.11.0):
+    - React-Core
+  - RNGestureHandler (2.16.2):
+    - DoubleConversion
+    - glog
+    - hermes-engine
+    - RCT-Folly (= 2024.01.01.00)
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Codegen
+    - React-Core
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-ImageManager
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-rendererdebug
+    - React-utils
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - Yoga
+  - RNScreens (3.31.1):
+    - DoubleConversion
+    - glog
+    - hermes-engine
+    - RCT-Folly (= 2024.01.01.00)
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Codegen
+    - React-Core
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-ImageManager
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-RCTImage
+    - React-rendererdebug
+    - React-utils
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - Yoga
   - SocketRocket (0.7.0)
   - Yoga (0.0.0)
 
@@ -1208,6 +1284,7 @@ DEPENDENCIES:
   - EXConstants (from `../node_modules/expo-constants/ios`)
   - Expo (from `../node_modules/expo`)
   - ExpoAsset (from `../node_modules/expo-asset/ios`)
+  - ExpoDevice (from `../node_modules/expo-device/ios`)
   - ExpoFileSystem (from `../node_modules/expo-file-system/ios`)
   - ExpoFont (from `../node_modules/expo-font/ios`)
   - ExpoKeepAwake (from `../node_modules/expo-keep-awake/ios`)
@@ -1242,6 +1319,9 @@ DEPENDENCIES:
   - React-jsitracing (from `../node_modules/react-native/ReactCommon/hermes/executor/`)
   - React-logger (from `../node_modules/react-native/ReactCommon/logger`)
   - React-Mapbuffer (from `../node_modules/react-native/ReactCommon`)
+  - "react-native-blur (from `../node_modules/@react-native-community/blur`)"
+  - react-native-notifications (from `../node_modules/react-native-notifications`)
+  - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - React-nativeconfig (from `../node_modules/react-native/ReactCommon`)
   - React-NativeModulesApple (from `../node_modules/react-native/ReactCommon/react/nativemodule/core/platform/ios`)
   - React-perflogger (from `../node_modules/react-native/ReactCommon/reactperflogger`)
@@ -1265,6 +1345,11 @@ DEPENDENCIES:
   - React-runtimescheduler (from `../node_modules/react-native/ReactCommon/react/renderer/runtimescheduler`)
   - React-utils (from `../node_modules/react-native/ReactCommon/react/utils`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
+  - RNBackgroundFetch (from `../node_modules/react-native-background-fetch`)
+  - "RNCAsyncStorage (from `../node_modules/@react-native-async-storage/async-storage`)"
+  - "RNCPushNotificationIOS (from `../node_modules/@react-native-community/push-notification-ios`)"
+  - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
+  - RNScreens (from `../node_modules/react-native-screens`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -1282,6 +1367,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/expo"
   ExpoAsset:
     :path: "../node_modules/expo-asset/ios"
+  ExpoDevice:
+    :path: "../node_modules/expo-device/ios"
   ExpoFileSystem:
     :path: "../node_modules/expo-file-system/ios"
   ExpoFont:
@@ -1347,6 +1434,12 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/logger"
   React-Mapbuffer:
     :path: "../node_modules/react-native/ReactCommon"
+  react-native-blur:
+    :path: "../node_modules/@react-native-community/blur"
+  react-native-notifications:
+    :path: "../node_modules/react-native-notifications"
+  react-native-safe-area-context:
+    :path: "../node_modules/react-native-safe-area-context"
   React-nativeconfig:
     :path: "../node_modules/react-native/ReactCommon"
   React-NativeModulesApple:
@@ -1393,6 +1486,16 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/react/utils"
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
+  RNBackgroundFetch:
+    :path: "../node_modules/react-native-background-fetch"
+  RNCAsyncStorage:
+    :path: "../node_modules/@react-native-async-storage/async-storage"
+  RNCPushNotificationIOS:
+    :path: "../node_modules/@react-native-community/push-notification-ios"
+  RNGestureHandler:
+    :path: "../node_modules/react-native-gesture-handler"
+  RNScreens:
+    :path: "../node_modules/react-native-screens"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -1400,12 +1503,13 @@ SPEC CHECKSUMS:
   boost: d3f49c53809116a5d38da093a8aa78bf551aed09
   DoubleConversion: 76ab83afb40bddeeee456813d9c04f67f78771b5
   EXConstants: 409690fbfd5afea964e5e9d6c4eb2c2b59222c59
-  Expo: a9897504e76db42c472778bc1eeef7895092f3fe
+  Expo: 61b2953ad6afa979729f639c5992c182e8eb9040
   ExpoAsset: 323700f291684f110fb55f0d4022a3362ea9f875
+  ExpoDevice: d204395e17fffdcefa7470bdef33b07719ac41b1
   ExpoFileSystem: 80bfe850b1f9922c16905822ecbf97acd711dc51
   ExpoFont: e7f2275c10ca8573c991e007329ad6bf98086485
   ExpoKeepAwake: 3b8815d9dd1d419ee474df004021c69fdd316d08
-  ExpoModulesCore: ae1a4244021797374769ef44499fc4313d2ac676
+  ExpoModulesCore: 3d713ef226952c6a4a36a0f4501a328baba84a90
   FBLazyVector: ac12dc084d1c8ec4cc4d7b3cf1b0ebda6dab85af
   fmt: 4c2741a687cc09f0634a2e2c72a838b99f1ff120
   glog: fdfdfe5479092de0c4bdbebedd9056951f092c4f
@@ -1434,6 +1538,9 @@ SPEC CHECKSUMS:
   React-jsitracing: 3b6060bbf5317663667e1dd93560c7943ab86ccc
   React-logger: 257858bd55f3a4e1bc0cf07ddc8fb9faba6f8c7c
   React-Mapbuffer: 6c1cacdbf40b531f549eba249e531a7d0bfd8e7f
+  react-native-blur: a2acf22fd7bd13621df5e0b1c130b81adea7009c
+  react-native-notifications: 4601a5a8db4ced6ae7cfc43b44d35fe437ac50c4
+  react-native-safe-area-context: a240ad4b683349e48b1d51fed1611138d1bdad97
   React-nativeconfig: ba9a2e54e2f0882cf7882698825052793ed4c851
   React-NativeModulesApple: 8d11ff8955181540585c944cf48e9e7236952697
   React-perflogger: ed4e0c65781521e0424f2e5e40b40cc7879d737e
@@ -1457,6 +1564,11 @@ SPEC CHECKSUMS:
   React-runtimescheduler: cfbe85c3510c541ec6dc815c7729b41304b67961
   React-utils: f242eb7e7889419d979ca0e1c02ccc0ea6e43b29
   ReactCommon: f7da14a8827b72704169a48c929bcde802698361
+  RNBackgroundFetch: 2f800a04434620db15ede2e8f21886608a2d1743
+  RNCAsyncStorage: 826b603ae9c0f88b5ac4e956801f755109fa4d5c
+  RNCPushNotificationIOS: 64218f3c776c03d7408284a819b2abfda1834bc8
+  RNGestureHandler: 2282cfbcf86c360d29f44ace393203afd5c6cff7
+  RNScreens: b32a9ff15bea7fcdbe5dff6477bc503f792b1208
   SocketRocket: abac6f5de4d4d62d24e11868d7a2f427e0ef940d
   Yoga: 950bbfd7e6f04790fdb51149ed51df41f329fcc8
 

@@ -2,10 +2,12 @@
 
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTLinkingManager.h>
+#import "RNNotifications.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+    [RNNotifications startMonitorNotifications]; // -> Add this line
 {
   self.moduleName = @"main";
 
@@ -57,6 +59,15 @@
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
 {
   return [super application:application didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
+}
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+  [RNNotifications didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
+}
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+  [RNNotifications didFailToRegisterForRemoteNotificationsWithError:error];
+}
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler {
+  [RNNotifications didReceiveBackgroundNotification:userInfo withCompletionHandler:completionHandler];
 }
 
 @end

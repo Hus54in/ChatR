@@ -2,6 +2,8 @@ package com.endem.ChatR
 
 import android.app.Application
 import android.content.res.Configuration
+import com.wix.reactnativenotifications.RNNotificationsPackage;
+
 
 import com.facebook.react.PackageList
 import com.facebook.react.ReactApplication
