@@ -9,17 +9,24 @@ import SearchUserScreen from "./app/search_user/search_user";
 import Register from "./app/login/register";
 import Chat from "./app/chat/chat";
 import ChatManagerPool from "./app/chat/chatsmanagerpool";
+
 const Stack = createStackNavigator();
 
 export default function App() {
   const [loggedInUser, setLoggedInUser] = useState(null);
 
+  
+  
+
   useEffect(() => {
+
+
+    // Check if user is logged in
     const getUser = async () => {
       try {
         const user = await AppwriteClient.account.get();
-          ChatManagerPool.chatManagers = new Map(); // Initialize the pool
-          ChatManagerPool.startPool(); // Start the pool
+        ChatManagerPool.chatManagers = new Map();
+        ChatManagerPool.startPool(); // Start the pool
         setLoggedInUser(user);
       } catch (error) {
         console.error("Failed to fetch user", error);
@@ -27,20 +34,15 @@ export default function App() {
     };
 
     getUser();
+
   }, []);
-
-
-
-
 
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         {loggedInUser ? (
           <Stack.Screen name="Home">
-            {(props) => (
-              <Chat {...props} navigation={Stack} />
-            )}
+            {(props) => <Chat {...props} navigation={Stack} />}
           </Stack.Screen>
         ) : (
           <Stack.Screen name="Login">
@@ -63,9 +65,7 @@ export default function App() {
         </Stack.Screen>
         <Stack.Screen name="Search" component={SearchUserScreen} />
         <Stack.Screen name="Register">
-          {(props) => (
-            <Register {...props} />
-          )}
+          {(props) => <Register {...props} />}
         </Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
