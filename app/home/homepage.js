@@ -1,8 +1,7 @@
 import React from "react";
 import { StyleSheet, View, Text, TouchableHighlight, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import ChatsScreen from "../chats_screen";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import Chat from "../chat/chat";
 
 const HomePage = () => {
   const navigation = useNavigation(); // Use the useNavigation hook
@@ -10,30 +9,22 @@ const HomePage = () => {
   return (
     <View style={styles.root}>
       <View style={styles.top}>
-        <Text style={styles.chats_heading}>{`Chats`}</Text>
+        <Text style={styles.chats_heading}>{`Chat`}</Text>
         <View style={{ flexDirection: "row" }}>
-          <TouchableOpacity
-          onPress={() => {
-            navigation.navigate("Search"); // Navigate to SearchUserScreen
-          }}
+          <TouchableHighlight
+            style={[styles.profileImgContainer, { borderColor: 'green', borderWidth: 1 }]}
+            onPress={() => {
+              navigation.navigate("Profile"); // Navigate to ProfileScreen
+              console.log('Profile image pressed');
+            } }
           >
-            <Text style={styles.add_button}> + </Text>
-          </TouchableOpacity>
-        <TouchableHighlight
-          style={[styles.profileImgContainer, { borderColor: 'green', borderWidth: 1 }]}
-          onPress={() => {
-            navigation.navigate("Profile"); // Navigate to ProfileScreen
-            console.log('Profile image pressed');
-          }}
-        >
-          <Image source={{ uri: "https://xsgames.co/randomusers/avatar.php?g=pixel" }} style={styles.profileImgContainer} />
-        </TouchableHighlight>
+            <Image source={{ uri: "https://xsgames.co/randomusers/avatar.php?g=pixel" }} style={styles.profileImgContainer} />
+          </TouchableHighlight>
         </View>
       </View>
-      <ChatsScreen />
+    <Chat />
     </View>
-  );
-};
+)};
 
 const styles = StyleSheet.create({
   root: {

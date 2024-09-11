@@ -54,7 +54,7 @@ export default class LoginPage extends Component {
     console.log("Logging in");
     const { email, password } = this.state;
     try {
-      const session = await AppwriteClient.account.createEmailPasswordSession(
+      const session = await AppwriteClient.account.createEmailSession(
         email,
         password
       );
