@@ -114,16 +114,24 @@ export default function Chat() {
     return (
       <View
         style={[
-          message.message_box,
-          item.senderID === global.userid ? { alignSelf: 'flex-start' } : { alignSelf: 'flex-end' },
+          message.messageContainer,
+          item.senderID === global.userid ? { alignSelf: 'flex-end' } : { alignSelf: 'flex-start' },
         ]}
       >
-        <View style={[message.rect, item.senderID == global.userid ?   { marginRight: 10 }:{ marginLeft : 20 }]}>
+
+  
+        {/* Message box with the actual message */}
+        <View style={[message.rect, item.senderID === global.userid ? { marginRight: 5, marginLeft: 20 } : { marginLeft: 5, marginRight: 20 }]}>
           <Text style={message.message}>{decrypt(item.message)}</Text>
-        </View>
+        </View>  
+              {/* Username on top of the message box */}
+        <Text style={[message.username,   item.senderID === global.userid ? { alignSelf: 'flex-end', marginRight: 5, marginLeft: 2 } : { alignSelf: 'flex-start',marginLeft: 5, marginRight: 20 }]}>
+          {item.senderID === global.userid ? 'You' : "Endem"} {/* Replace 'senderName' with the actual sender's name */}
+        </Text>
       </View>
     );
   };
+  
 
   const handleSend = async () => {
     try {
@@ -134,8 +142,8 @@ export default function Chat() {
         {
           message: encrypt(text),
           Created: new Date().toISOString(),
-        },
-        [Permission.read(Role.user(global.userid)), Permission.write(Role.user(global.userid))]
+          senderID : global.userid
+        }
       );
 
       setMessagesDict((prevMessages) => ({
@@ -180,25 +188,36 @@ export default function Chat() {
 }
 
 const message = StyleSheet.create({
-  message: {
-    fontFamily: "Georgia-Regular",
-    color: "white",
+  messageContainer: {
+    marginVertical: 2, // Space between messages
+    flexDirection: 'column', // Arrange username and message vertically
+    alignItems: 'flex-start', // Align messages based on sender
+  },
+  username: {
+    fontFamily: 'Georgia-Regular',
+    fontSize: 14,
+    color: 'gray', // Lighter color for the username
+    marginBottom: 2, // Slight space between username and message box
+    
   },
   rect: {
     borderBottomWidth: 3,
     borderRightWidth: 3,
-    flexDirection: 'row',
-    alignItems: 'flex-end',          // Align items to the bottom of the container
-    backgroundColor: "teal",
+    backgroundColor: 'teal',
     borderRadius: 14,
     padding: 10,
-    position: 'relative', // Ensure this container is relatively positioned
+    position: 'relative', // Keep relative positioning
+  },
+  message: {
+    fontFamily: 'Georgia-Regular',
+    color: 'white',
   },
   message_box: {
-    color: "white",
+    color: 'white',
     marginVertical: 2,
-  }
+  },
 });
+
 
 
 const styles = StyleSheet.create({
