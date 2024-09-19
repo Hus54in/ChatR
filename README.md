@@ -18,14 +18,22 @@ A way to chat with everyone in an encrypted manner.
 
 
 ## Usage/Examples
-Create an Account: Get Started by clicking on Create an Account then fill out necessary information.
+### Create an Account: 
+Get Started by clicking on Create an Account then fill out necessary information.
+
 <div style="display: flex; flex-direction: row;">
   <img src="lib/IMG_6538.PNG" alt="Fill in Email and Password" width="300"/>
   <img src="lib/IMG_6539.PNG" alt="Select a username and fill in your name" width="300"/>
 </div>
-Login: Login to the account by providing email and password.
+
+### Login: 
+Login to the account by providing email and password.
+
 <img src="lib/IMG_6537.PNG" alt="Login to your account" width="300"/>
-Start chatting with people
+
+### Chat with people
+Start chatting with people by writing out a message and clicking on send button with confidence because your chats are end-to-end encrypted
+
 <img src="lib/IMG_6540.PNG" alt="Start chatting with people" width="300"/>
 
 ## Author
